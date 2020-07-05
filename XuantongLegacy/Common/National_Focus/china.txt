@@ -1,0 +1,78 @@
+﻿focus_tree = {
+	id = china_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = CHI
+			has_dlc = "Together for Victory"
+		}
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 1000 }
+
+	focus = {
+		id = the_year_of_the_monkey
+		icon = GFX_goal_generic_major_war
+		x = 3
+		y = 5
+		
+		#prerequisite = { focus = AST_workers_paradise }
+		#relative_position_id = AST_empower_the_workers
+
+		cost = 5
+
+		#bypass = {
+		#}
+
+		available = {
+			NOT = { is_in_faction_with = JAP }
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = -20
+		}
+		ai_will_do = {
+			}
+		}
+	}
+	focus = {
+		id = the_year_of_the_monkey
+		icon = GFX_goal_generic_major_war
+		x = 3
+		y = 5
+		
+		prerequisite = { focus = the_year_of_the_monkey }
+		relative_position_id = the_year_of_the_monkey
+
+		cost = 5
+
+		#bypass = {
+		#}
+
+		available = {
+			NOT = { is_in_faction_with = JAP }
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.10
+		}
+		ai_will_do = {
+			}
+		}
+	}
+}		

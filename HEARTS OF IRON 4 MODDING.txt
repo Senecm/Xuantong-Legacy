@@ -1,0 +1,136 @@
+HEARTS OF IRON IV MODDING
+[credits to 'The Iron Workshop']
+
+File Locations:
+
+	[
+	C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV
+	C:\Users\{USER}\Documents\Paradox Interactive\Hearts of Iron IV\mod
+	]
+
+modding tools:
+	debug mode (see below)
+	notepad++ [ https://notepad-plus-plus.org/ ]
+	paint.NET [ https://www.getpaint.net/index.html ]
+	in game commands: 
+		'reload focus'
+		[ https://hoi4.paradoxwikis.com/Console_commands ] (outdated)
+	modding code:
+		[ https://hoi4cheats.com/ ]
+	
+
+Creating a DEBUG shortcut:
+	go to 
+	]
+	C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV
+	[
+	find 'hoi4.exe'
+	right click and press 'send to -> desktop'
+	on the desktop, right click the shortcut
+	press properties
+	at the very end of the target line type '{SPACE} -debug'
+
+Creating a mod:
+
+1.Open game launcher, 
+	click on mod tools and create a mod
+2.Enter a name for the mod, 
+	and the version which it is designed for, 
+	then create a directory name and assign tags (you can close the launcher now)
+
+Creating a focus tree:
+
+1.Navigate to file,
+	[
+	C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV\common\national_focus
+	]
+2.Create the relevent folders in your mod file,
+	create a folder 'common'
+	in common create a folder called 'national_focus'
+
+3.COPY a 'australia.txt' file and paste it into your mod file,
+	rename it to your relevent country you are modding
+
+4.Go back into the main mod folder, 
+	create a folder called 'interface'
+	from:
+	[	
+	C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV\interface
+	]
+	copy files 'goals' and 'goals_shine'
+
+5.Next create a folder called gfx,
+	inside that folder create a folder called 'interface'
+	inside interface create a folder called 'goals'
+	from:
+	[
+	C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV\gfx\interface\goals
+	]
+	copy a file over to your mod
+	change the name to something like '{COUNTRY}_focus_conquer'
+	go to the 'interface' folder in your mod folder
+	open the goals file and copy a sprite type entry
+	paste it above the commented line
+	on the 'texturefile' copy the name of the file in the 'goals' folder in your mod file0
+
+	open the 'goals_shine' file
+	then copy a sprite type and paste it above the first sprite type
+	then change the name to whatever was in the 'goals' file make sure its followed by '_shine'
+	under the 'texturefile' line do as was done with the goals file, but change it at every interval of the copied sprite
+
+	then change the 'icon = ' line in the 'national_focus' file
+	
+	
+
+6.Next create a folder called localisation,
+	from:
+	[
+	C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV\localisation
+	]
+	copy a file that has '_l_english' in it and paste it in your mod file
+	rename it to '{COUNTRY}_focus_l_english' (where country is the country your modding)
+	Open the file and delete everythin except 'l_english:'
+
+7.Open the national_focus folder in your mod folder,
+	click after the semi colon located after 'continuious focus position'
+	then, hold shift and click just before the last 'focus = {' in the file
+	press backspace (delete everything selected)
+
+	change the 'id' to 'id = {COUNTRY}_focus'
+	delete the 'has_dlc' line
+	delete the commented 'modifer' paragraph
+	change the 'tag' line to the tag of your country e.g 'tag = CHI' for china
+	adjust the 'continuous_focus_position' (go into debug mode)
+	to adjust, change the x and the y (when relative position id)
+	
+	7.1 Rearranging the focus syntax (some is optional maked with (o)),
+	under 'focus = {'
+		change the 'id' to the name of the focus you want it to be e.g 'id = scotty_from_marketing'
+		move the prerequisites line under the 'y =' line with a space(o)
+		being the first focus, you can remove the 'relative_position_id' and the 'prerequisites'
+		move the 'ai_will_do' block to the bottom (o)
+
+	open the localisation file
+	type the id of the focus e.g 'id = scotty_from_marketing'
+
+8.Open the localisation folder you made in your mod file,
+	copy the 'id' of on of the focuses you made in the national_focus file and paste it in the localisation file
+	follow it up with a semi colon and a zero e.g scotty_from_marketing:0
+	then type quotation marks and within them type what you want the focus to show up as
+	e.g scotty_from_marketting:0 "Scotty From Marketting"
+	to add a description, make a new line 
+	paste the 'id' of the focus and add '_desc' after it 
+	then add the semi colon, zero and quotation amrks
+	e.g scotty_from_marketting_desc:0 "Scotty is pretty cool, and from  marketing!"
+
+other Syntax:
+	mutually_exclusive = { focus = {NAME_OF_FOCUS} }
+	
+
+		
+	
+
+
+	
+
+	
